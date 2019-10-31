@@ -15,6 +15,7 @@ public class EvaluationService {
 	 */
 	public String reverse(String string) {
 		
+		String reverseString;
 		return "";
 	}
 
@@ -417,7 +418,7 @@ public class EvaluationService {
 	}
 
 	/**
-	 * 16. Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan
+	 * 16. Determine if a sentence is a pangram. A pangram (Greek: παν γ
 	 * gramma, "every letter") is a sentence using every letter of the alphabet at
 	 * least once. The best known English pangram is:
 	 * 
