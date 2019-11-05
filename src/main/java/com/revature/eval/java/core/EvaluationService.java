@@ -1,8 +1,6 @@
 package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
-import java.util.List;
-import java.util.Map;
 
 public class EvaluationService {
 
@@ -14,16 +12,17 @@ public class EvaluationService {
 	 * @return
 	 */
 		public String reverse(String string) {
-			     String output="";        		     
-		  for (int i=string.length()-1; i>=0 ; i--)
-		        output +=string.charAt(i);
-	      System.out.println(("The string reversed: " + output));				    
-	      return output;
-	      		     
-			} 			
-		public void main(String[] args) {
-			reverse("Exit");
-		}
+		     String output="";        		     
+	  for (int i=string.length()-1; i>=0 ; i--)
+	        output +=string.charAt(i);
+     System.out.println(("The string reversed: " + output));				    
+     return output;
+     		     
+		} 			
+	public static void main(String[] args) {
+		EvaluationService rev = new EvaluationService();
+		rev.reverse("Exit");
+	}
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
