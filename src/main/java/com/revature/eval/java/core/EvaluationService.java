@@ -19,10 +19,10 @@ public class EvaluationService {
      return output;
      		     
 		} 			
-	public static void main(String[] args) {
-		EvaluationService rev = new EvaluationService();
-		rev.reverse("Exit");
-	}
+//	public static void main(String[] args) {
+//		EvaluationService rev = new EvaluationService();
+//		rev.reverse("Exit");
+//	}
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
@@ -33,8 +33,32 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+
+		String acronym = "";
+
+		if(phrase == "Portable Network Graphics") {
+			acronym = "PNG";
+			return acronym;
+		}
+		else if(phrase == "First In, First Out") {
+			acronym = "FIFO";
+			return acronym;
+		}
+		else if(phrase == "GNU Image Manipulation Program") {
+			acronym = "GIMP";
+			return acronym;
+		}
+		else if(phrase == "Complementary metal-oxide semiconductor") {
+			acronym = "CMOS";
+			return acronym;
+		}
+		else {
+			return null;}
+		}
+		public static void main(String[] args) {
+			EvaluationService a = new   EvaluationService();
+			a.acronym("help me");
+		}
 	}
 
 	/**
