@@ -112,6 +112,7 @@ public class EvaluationService {
 
 		public boolean isEquilateral() {
 			// TODO Write an implementation for this method declaration
+			boolean b = false;
 			return false;
 		}
 
