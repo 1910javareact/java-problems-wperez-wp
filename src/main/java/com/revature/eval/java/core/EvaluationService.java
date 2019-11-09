@@ -72,6 +72,7 @@ public class EvaluationService {
 	 * different lengths.
 	 *
 	 */
+	
 	static class Triangle {
 		
 		private double sideOne;
@@ -128,12 +129,10 @@ public class EvaluationService {
 			boolean S = false;
 			if(sideOne != sideTwo || sideTwo != sideThree) {
 			return false;
-		}else {return true;}}
+			}else {return true;}
 			
+		}
 			
-
-	
-
 	/**
 	 * 4. Given a word, compute the scrabble score for that word.
 	 * 
