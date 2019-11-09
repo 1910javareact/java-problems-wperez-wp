@@ -1,6 +1,8 @@
 package com.revature.eval.java.core;
 
+import java.awt.List;
 import java.time.temporal.Temporal;
+import java.util.Map;
 
 public class EvaluationService {
 
@@ -16,13 +18,13 @@ public class EvaluationService {
 	  for (int i=string.length()-1; i>=0 ; i--)
 	        output +=string.charAt(i);
      System.out.println(("The string reversed: " + output));				    
-     return output;
-     		     
+     return output;   		     
 		} 			
 //	public static void main(String[] args) {
 //		EvaluationService rev = new EvaluationService();
 //		rev.reverse("Exit");
 //	}
+		
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
@@ -32,6 +34,7 @@ public class EvaluationService {
 	 * @param phrase
 	 * @return
 	 */
+}
 	public String acronym(String phrase) {
 
 		String acronym = "";
@@ -55,11 +58,10 @@ public class EvaluationService {
 		else {
 			return null;}
 		}
-		public static void main(String[] args) {
-			EvaluationService a = new   EvaluationService();
-			a.acronym("help me");
-		}
-	}
+		//public static void main(String[] args) {
+			//EvaluationService a = new   EvaluationService();
+			//a.acronym("help me");
+		//}
 
 	/**
 	 * 3. Determine if a triangle is equilateral, isosceles, or scalene. An
@@ -71,6 +73,7 @@ public class EvaluationService {
 	 *
 	 */
 	static class Triangle {
+		
 		private double sideOne;
 		private double sideTwo;
 		private double sideThree;
@@ -111,22 +114,25 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
-			boolean b = false;
-			return false;
-		}
-
+		 if (sideOne == sideTwo && sideTwo == sideThree) { 
+			 return false;
+		}else {return true;}}
+		
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
+			boolean I = false;
+			if(sideOne == sideTwo || sideTwo == sideThree) {
 			return false;
-		}
+		}else {return true;}}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
+			boolean S = false;
+			if(sideOne != sideTwo || sideTwo != sideThree) {
 			return false;
-		}
+		}else {return true;}}
+			
+			
 
-	}
+	
 
 	/**
 	 * 4. Given a word, compute the scrabble score for that word.
