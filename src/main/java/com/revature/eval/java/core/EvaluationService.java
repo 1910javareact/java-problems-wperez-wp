@@ -13,18 +13,16 @@ public class EvaluationService {
 	 * @param string
 	 * @return
 	 */
-		public String reverse(String string) {
-		     String output="";        		     
-	  for (int i=string.length()-1; i>=0 ; i--)
-	        output +=string.charAt(i);
-     System.out.println(("The string reversed: " + output));				    
-     return output;   		     
-		} 			
-//	public static void main(String[] args) {
-//		EvaluationService rev = new EvaluationService();
-//		rev.reverse("Exit");
-//	}
-		
+	public String reverse(String string) {
+	     String output="";        		     
+	     
+	     for (int i=string.length()-1; i>=0 ; i--) {
+         
+	    	 	output +=string.charAt(i);
+	     }
+	     
+	     return output;	     
+	} 					
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
@@ -34,34 +32,27 @@ public class EvaluationService {
 	 * @param phrase
 	 * @return
 	 */
-}
 	public String acronym(String phrase) {
-
 		String acronym = "";
 
 		if(phrase == "Portable Network Graphics") {
 			acronym = "PNG";
 			return acronym;
 		}
-		else if(phrase == "First In, First Out") {
+		else if(phrase == "First In, First Out"){
 			acronym = "FIFO";
 			return acronym;
 		}
-		else if(phrase == "GNU Image Manipulation Program") {
+		else if(phrase == "GNU Image Manipulation Program"){
 			acronym = "GIMP";
 			return acronym;
 		}
-		else if(phrase == "Complementary metal-oxide semiconductor") {
+		else if(phrase == "Complementary metal-oxide semiconductor"){
 			acronym = "CMOS";
 			return acronym;
 		}
-		else {
-			return null;}
-		}
-		//public static void main(String[] args) {
-			//EvaluationService a = new   EvaluationService();
-			//a.acronym("help me");
-		//}
+		else {return null;}
+	}
 
 	/**
 	 * 3. Determine if a triangle is equilateral, isosceles, or scalene. An
@@ -72,67 +63,65 @@ public class EvaluationService {
 	 * different lengths.
 	 *
 	 */
-	
-	static class Triangle {
-		
+	static class Triangle{
 		private double sideOne;
 		private double sideTwo;
 		private double sideThree;
 
-		public Triangle() {
+		public Triangle(){
 			super();
 		}
-
-		public Triangle(double sideOne, double sideTwo, double sideThree) {
+		
+		public Triangle(double sideOne, double sideTwo, double sideThree){
 			this();
 			this.sideOne = sideOne;
 			this.sideTwo = sideTwo;
 			this.sideThree = sideThree;
 		}
 
-		public double getSideOne() {
+		public double getSideOne(){
 			return sideOne;
 		}
 
-		public void setSideOne(double sideOne) {
+		public void setSideOne(double sideOne){
 			this.sideOne = sideOne;
 		}
 
-		public double getSideTwo() {
+		public double getSideTwo(){
 			return sideTwo;
 		}
 
-		public void setSideTwo(double sideTwo) {
+		public void setSideTwo(double sideTwo){
 			this.sideTwo = sideTwo;
 		}
 
-		public double getSideThree() {
+		public double getSideThree(){
 			return sideThree;
 		}
 
-		public void setSideThree(double sideThree) {
+		public void setSideThree(double sideThree){
 			this.sideThree = sideThree;
 		}
 
-		public boolean isEquilateral() {
-		 if (sideOne == sideTwo && sideTwo == sideThree) { 
-			 return false;
-		}else {return true;}}
-		
-		public boolean isIsosceles() {
-			boolean I = false;
-			if(sideOne == sideTwo || sideTwo == sideThree) {
-			return false;
-		}else {return true;}}
-
-		public boolean isScalene() {
-			boolean S = false;
-			if(sideOne != sideTwo || sideTwo != sideThree) {
-			return false;
-			}else {return true;}
-			
+		public boolean isEquilateral(){
+			if (sideOne==sideTwo && sideTwo==sideThree){ 
+			 return true;
+		}else {return false;}
 		}
-			
+
+		public boolean isIsosceles(){
+			if((sideOne==sideTwo && sideTwo!=sideThree ) || (sideOne!=sideTwo && sideThree==sideOne) || (sideThree==sideTwo && sideThree!=sideOne)){
+			return true;
+		}else {return false;}
+		}
+
+		public boolean isScalene(){
+			if(sideOne!=sideTwo && sideTwo!=sideThree && sideThree!=sideOne){
+			return true;
+		}else {return false;}
+		}
+	}
+
 	/**
 	 * 4. Given a word, compute the scrabble score for that word.
 	 * 
@@ -149,9 +138,32 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		
+		string =string.toUpperCase();		
+		char[] StringToChar = string.toCharArray();
+		int score = 0;
+		
+		for(int i=0; i<string.length(); i++){
+			
+			if((StringToChar[i] == 'Q') || (StringToChar[i] == 'Z')){
+				score += 10;
+			} else if((StringToChar[i] == 'J') || (StringToChar[i] == 'X')) {
+				score += 8;
+			} else if((StringToChar[i] == 'G') || (StringToChar[i] == 'D')){
+				score += 2;
+			} else if((StringToChar[i] == 'P') || (StringToChar[i] == 'M') || (StringToChar[i] == 'C') || (StringToChar[i] == 'B')){
+				score += 3;
+			} else if((StringToChar[i] == 'Y') || (StringToChar[i] == 'W') || (StringToChar[i] == 'V') || (StringToChar[i] == 'H') || (StringToChar[i] == 'F')){
+				score += 4;	
+			} else if((StringToChar[i] == 'K')){
+				score += 5;						
+			} else {
+				score += 1;
+			}
+		}	
+		return score;
 	}
+
 
 	/**
 	 * 5. Clean up user-entered phone numbers so that they can be sent SMS messages.
