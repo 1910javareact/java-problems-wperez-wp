@@ -3,6 +3,7 @@ package com.revature.eval.java.core;
 import java.util.List;
 import java.time.temporal.Temporal;
 import java.util.Map;
+import java.util.Scanner;
 
 public class EvaluationService {
 
@@ -197,9 +198,20 @@ public class EvaluationService {
 	 * NANP-countries, only 1 is considered a valid country code.
 	 */
 	public String cleanPhoneNumber(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
-	}
+		String value;
+		 
+		       Scanner in = new Scanner(System.in);
+		       System.out.print( "Please enter a phone number:");
+		       String word = in.nextLine();  	   
+		       word.replaceAll("\\D", "");//remove non-digits.
+		       
+		           if(word.replaceAll("\\D", "").length() > 10){
+		        	   value = word.replaceAll("\\D", "");
+		        	   value = value.substring(1);
+		        	   return value;
+		          } else{return word.replaceAll("\\D", "");
+		         }
+		        }
 
 	/**
 	 * 6. Given a phrase, count the occurrences of each word in that phrase.
