@@ -21,7 +21,7 @@ public class EvaluationService {
 	    	 	output +=string.charAt(i);
 	     }
 	     return output;	     
-	} 					
+	}					
 
 	/**
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
@@ -197,25 +197,21 @@ public class EvaluationService {
 	 */
 	public String cleanPhoneNumber(String string) {
 		   
-	       String word = " "; 
-	       String value = " ";
+	       String word = ""; 
+	       String value = "";
 	       word.replaceAll("\\D","");
 	       
 	           if(word.charAt(0) == 1){
-	        	   value = word.replaceAll("\\D","");
+	        	   value = word;
 	        	   value = value.substring(1);
 	        	   return value;
-	          } if (word.length() == 10){return word;
-	          }if(word.length() >= 11)
-	          	{throw new IllegalArgumentException();	          	
-	          	}if(word.length() <= 5)
+	          } if (word.length() > 10)
+	          	{throw new IllegalArgumentException();
+	          	}if (word.length() < 10)
 	          	{throw new IllegalArgumentException();
 	          	}	
-	          	return (word);
-	         } 
-	/*public static void main(String[] args) {
-    	 EvaluationService n = new EvaluationService();
- 				n.cleanPhoneNumber("");}
+	          	return word;}
+	         	
 
 	/**
 	 * 6. Given a phrase, count the occurrences of each word in that phrase.
